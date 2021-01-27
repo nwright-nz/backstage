@@ -1,5 +1,14 @@
 # @backstage/plugin-catalog-backend
 
+## 0.5.5
+
+### Patch Changes
+
+- 9dd057662: Upgrade [git-url-parse](https://www.npmjs.com/package/git-url-parse) to [v11.4.4](https://github.com/IonicaBizau/git-url-parse/pull/125) which fixes parsing an Azure DevOps branch ref.
+- a91aa6bf2: Support supplying a custom catalog descriptor file parser
+- Updated dependencies [9dd057662]
+  - @backstage/backend-common@0.5.1
+
 ## 0.5.4
 
 ### Patch Changes

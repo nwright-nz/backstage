@@ -1,5 +1,17 @@
 # @backstage/backend-common
 
+## 0.5.1
+
+### Patch Changes
+
+- 9dd057662: Upgrade [git-url-parse](https://www.npmjs.com/package/git-url-parse) to [v11.4.4](https://github.com/IonicaBizau/git-url-parse/pull/125) which fixes parsing an Azure DevOps branch ref.
+- Updated dependencies [9dd057662]
+- Updated dependencies [ef7957be4]
+- Updated dependencies [ef7957be4]
+- Updated dependencies [ef7957be4]
+  - @backstage/integration@0.3.1
+  - @backstage/config-loader@0.5.0
+
 ## 0.5.0
 
 ### Minor Changes
