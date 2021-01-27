@@ -14,24 +14,12 @@
  * limitations under the License.
  */
 
-import * as yup from 'yup';
 import type { Entity } from '../entity/Entity';
-import { schemaValidator } from './util';
+import { LocationV1alpha1 } from '../generated/schema';
+import { ajvCompiledJsonSchemaValidator } from './util';
 
 const API_VERSION = ['backstage.io/v1alpha1', 'backstage.io/v1beta1'] as const;
 const KIND = 'Location' as const;
-
-const schema = yup.object<Partial<LocationEntityV1alpha1>>({
-  apiVersion: yup.string().required().oneOf(API_VERSION),
-  kind: yup.string().required().equals([KIND]),
-  spec: yup
-    .object({
-      type: yup.string().notRequired().min(1),
-      target: yup.string().notRequired().min(1),
-      targets: yup.array(yup.string().required()).notRequired(),
-    })
-    .required(),
-});
 
 export interface LocationEntityV1alpha1 extends Entity {
   apiVersion: typeof API_VERSION[number];
@@ -43,8 +31,8 @@ export interface LocationEntityV1alpha1 extends Entity {
   };
 }
 
-export const locationEntityV1alpha1Validator = schemaValidator(
+export const locationEntityV1alpha1Validator = ajvCompiledJsonSchemaValidator(
   KIND,
   API_VERSION,
-  schema,
+  LocationV1alpha1,
 );

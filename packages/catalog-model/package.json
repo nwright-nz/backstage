@@ -21,17 +21,19 @@
     "backstage"
   ],
   "scripts": {
-    "build": "backstage-cli build",
+    "build": "yarn schema:build && backstage-cli build",
     "lint": "backstage-cli lint",
     "test": "backstage-cli test",
     "prepack": "backstage-cli prepack",
     "postpack": "backstage-cli postpack",
-    "clean": "backstage-cli clean"
+    "clean": "backstage-cli clean",
+    "schema:build": "ajv compile -s schema/EntityMeta.schema.json -s schema/Entity.schema.json -s \"schema/kinds/*.json\" -r \"schema/shared/*.json\" -o src/generated/schema.js && eslint --fix --no-ignore src/generated/schema.js > /dev/null ||: && prettier --write src/generated/schema.js"
   },
   "dependencies": {
     "@backstage/config": "^0.1.2",
     "@types/json-schema": "^7.0.5",
     "@types/yup": "^0.29.8",
+    "ajv": "^7.0.3",
     "json-schema": "^0.2.5",
     "lodash": "^4.17.15",
     "uuid": "^8.0.0",
@@ -42,6 +44,7 @@
     "@types/express": "^4.17.6",
     "@types/jest": "^26.0.7",
     "@types/lodash": "^4.14.151",
+    "ajv-cli": "^4.0.1",
     "yaml": "^1.9.2"
   },
   "files": [

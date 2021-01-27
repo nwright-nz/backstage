@@ -14,22 +14,12 @@
  * limitations under the License.
  */
 
-import * as yup from 'yup';
 import type { Entity } from '../entity/Entity';
-import { schemaValidator } from './util';
+import { DomainV1alpha1 } from '../generated/schema';
+import { ajvCompiledJsonSchemaValidator } from './util';
 
 const API_VERSION = ['backstage.io/v1alpha1', 'backstage.io/v1beta1'] as const;
 const KIND = 'Domain' as const;
-
-const schema = yup.object<Partial<DomainEntityV1alpha1>>({
-  apiVersion: yup.string().required().oneOf(API_VERSION),
-  kind: yup.string().required().equals([KIND]),
-  spec: yup
-    .object({
-      owner: yup.string().required().min(1),
-    })
-    .required(),
-});
 
 export interface DomainEntityV1alpha1 extends Entity {
   apiVersion: typeof API_VERSION[number];
@@ -39,8 +29,8 @@ export interface DomainEntityV1alpha1 extends Entity {
   };
 }
 
-export const domainEntityV1alpha1Validator = schemaValidator(
+export const domainEntityV1alpha1Validator = ajvCompiledJsonSchemaValidator(
   KIND,
   API_VERSION,
-  schema,
+  DomainV1alpha1,
 );
