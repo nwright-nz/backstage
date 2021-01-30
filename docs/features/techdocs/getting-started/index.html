@@ -184,7 +184,7 @@ configuration reference.</strong></p>
   <span class="hljs-attr">storageUrl:</span> <span class="hljs-string">http://localhost:7000/api/techdocs/static/docs</span>
   <span class="hljs-attr">requestUrl:</span> <span class="hljs-string">http://localhost:7000/api/techdocs/</span>
 </code></pre>
-<p><code>requestUrl</code> is used by TechDocs frontend plugin to discover techdocs-backend
+<p><code>requestUrl</code> is used by TechDocs frontend plugin to discover <code>techdocs-backend</code>
 endpoints, and the <code>storageUrl</code> is another endpoint in <code>techdocs-backend</code> which
 acts as a middleware between TechDocs and the storage (where the static
 generated docs site are stored). These default values should mostly work for
@@ -201,16 +201,16 @@ Backstage will assume that the sites are being generated on each entity's CI/CD
 pipeline, and are being stored in a storage somewhere.</p>
 <p>When <code>techdocs.builder</code> is set to <code>'external'</code>, TechDocs becomes more or less a
 read-only experience where it serves static files from a storage containing all
-the generated documentation. Read more in the &quot;Basic&quot; and &quot;Recommended&quot; setup of
-TechDocs <a href="/docs/features/techdocs/architecture">here</a></p>
+the generated documentation. Read more in the &quot;Basic&quot; and &quot;Recommended&quot; sections
+of the <a href="/docs/features/techdocs/architecture">TechDocs Architecture</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="choosing-storage-publisher"></a><a href="#choosing-storage-publisher" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Choosing storage (publisher)</h3>
 <p>TechDocs needs to know where to store generated documentation sites and where to
 fetch the sites from. This is managed by a
 <a href="/docs/features/techdocs/concepts#techdocs-publisher">Publisher</a>. Examples: Google Cloud Storage,
 Amazon S3, or local filesystem of Backstage server.</p>
-<p>It is okay to use the local filesystem in a &quot;Basic&quot; setup when you are trying
-out Backstage for the first time. Using Cloud Storage is documented
-<a href="/docs/features/techdocs/using-cloud-storage">here</a>.</p>
+<p>It is okay to use the local filesystem in a &quot;basic&quot; setup when you are trying
+out Backstage for the first time. At a later time, review
+<a href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">techdocs:</span>
   <span class="hljs-attr">storageUrl:</span> <span class="hljs-string">http://localhost:7000/api/techdocs/static/docs</span>
   <span class="hljs-attr">requestUrl:</span> <span class="hljs-string">http://localhost:7000/api/techdocs/</span>
@@ -237,19 +237,21 @@ environment is compatible with techdocs.</p>
 <p>You will have to install the <code>mkdocs</code> and <code>mkdocs-techdocs-core</code> package from
 pip, as well as <code>graphviz</code> and <code>plantuml</code> from your OS package manager (e.g.
 apt). See our
-<a href="https://github.com/backstage/techdocs-container/blob/main/Dockerfile">Dockerfile</a>
-for the latest requirements. You should be trying to match your Dockerfile with
-this one.</p>
+<a href="https://github.com/backstage/techdocs-container/blob/main/Dockerfile"><code>Dockerfile</code></a>
+for the latest requirements. You should be trying to match your <code>Dockerfile</code>
+with this one.</p>
 <p>Note: We recommend Python version 3.7 or higher.</p>
-<p>Caveat: Please install the <code>mkdocs-techdocs-core</code> package after all other Python
-packages. The order is important to make sure we get correct version of some of
-the dependencies. For example, we want <code>Markdown</code> version to be
+<blockquote>
+<p>Caveat: Please install the <code>mkdocs-techdocs-core</code> package after all other
+Python packages. The order is important to make sure we get correct version of
+some of the dependencies. For example, we want <code>Markdown</code> version to be
 <a href="https://github.com/backstage/backstage/blob/f9f70c225548017b6a14daea75b00fbd399c11eb/packages/techdocs-container/techdocs-core/requirements.txt#L11">3.2.2</a>.
 You can also explicitly install <code>Markdown==3.2.2</code> after installing all other
 Python packages.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="running-backstage-locally"></a><a href="#running-backstage-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running Backstage locally</h2>
 <p>Start the frontend and the backend app by
-<a href="/docs/getting-started/running-backstage-locally">running backstage locally</a>.</p>
+<a href="/docs/getting-started/running-backstage-locally">running Backstage locally</a>.</p>
 <p>Open your browser at <a href="http://localhost:3000/docs/">http://localhost:3000/docs/</a>
 to see all your documentation sites.</p>
 <h2><a class="anchor" aria-hidden="true" id="additional-reading"></a><a href="#additional-reading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional reading</h2>

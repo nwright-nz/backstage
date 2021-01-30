@@ -346,22 +346,18 @@ above:</p>
   <span class="hljs-attr">apis,</span>
   <span class="hljs-attr">plugins</span>: <span class="hljs-string">Object.values(plugins),</span>
   <span class="hljs-attr">components</span>: <span class="hljs-string">{</span>
-    <span class="hljs-attr">SignInPage</span>: <span class="hljs-string">props =&gt; {</span>
-      <span class="hljs-attr">return</span> <span class="hljs-string">(</span>
-        <span class="hljs-attr">&lt;SignInPage</span>
-          <span class="hljs-attr">{...props}</span>
-          <span class="hljs-attr">providers</span>=<span class="hljs-string">{[</span>
-            <span class="hljs-attr">{</span>
-              <span class="hljs-attr">id</span>: <span class="hljs-string">'github-auth-provider',</span>
-              <span class="hljs-attr">title</span>: <span class="hljs-string">'GitHub',</span>
-              <span class="hljs-attr">message</span>: <span class="hljs-string">'Simple Backstage Application Login',</span>
-              <span class="hljs-attr">apiRef</span>: <span class="hljs-string">githubAuthApiRef,</span>
-            <span class="hljs-attr">},</span>
-          <span class="hljs-attr">]}</span>
-          <span class="hljs-attr">align</span>=<span class="hljs-string">"center"</span>
-        <span class="hljs-attr">/&gt;</span>
-      <span class="hljs-attr">);</span>
-    <span class="hljs-attr">},</span>
+    <span class="hljs-attr">SignInPage</span>: <span class="hljs-string">props =&gt; (</span>
+      <span class="hljs-attr">&lt;SignInPage</span>
+        <span class="hljs-attr">{...props}</span>
+        <span class="hljs-attr">auto</span>
+        <span class="hljs-attr">provider</span>=<span class="hljs-string">{{</span>
+          <span class="hljs-attr">id</span>: <span class="hljs-string">'github-auth-provider',</span>
+          <span class="hljs-attr">title</span>: <span class="hljs-string">'GitHub',</span>
+          <span class="hljs-attr">message</span>: <span class="hljs-string">'Simple Backstage Application Login',</span>
+          <span class="hljs-attr">apiRef</span>: <span class="hljs-string">githubAuthApiRef,</span>
+        <span class="hljs-attr">}}</span>
+      <span class="hljs-attr">/&gt;</span>
+    <span class="hljs-attr">),</span>
   <span class="hljs-attr">},</span>
 <span class="hljs-attr">});</span>
 </code></pre>
