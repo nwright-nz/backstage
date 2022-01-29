@@ -51,7 +51,7 @@
     "git-url-parse": "^11.4.4",
     "globby": "^11.0.0",
     "helmet": "^4.0.0",
-    "isomorphic-git": "^1.8.0",
+    "isomorphic-git": "^1.11.1",
     "jsonschema": "^1.2.6",
     "morgan": "^1.10.0",
     "uuid": "^8.2.0",
