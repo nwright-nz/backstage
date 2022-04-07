@@ -42,7 +42,7 @@
     "express-promise-router": "^3.0.3",
     "fs-extra": "^9.0.1",
     "knex": "^0.21.6",
-    "winston": "^3.2.1"
+    "winston": "^3.3.0"
   },
   "devDependencies": {
     "@backstage/cli": "^0.5.0",
