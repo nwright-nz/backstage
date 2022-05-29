@@ -8,7 +8,7 @@ RUN yarn install
 RUN yarn workspace example-app build
 
 # Contruct backstage-frontend image
-FROM nginx:mainline
+FROM nginx:1.22
 
 RUN apt-get update && apt-get -y install jq && rm -rf /var/lib/apt/lists/*
 
