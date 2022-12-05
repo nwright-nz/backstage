@@ -45,7 +45,7 @@
     "history": "^5.0.0",
     "moment": "^2.27.0",
     "pluralize": "^8.0.0",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "6.0.0-beta.0",
