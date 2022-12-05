@@ -40,7 +40,7 @@
     "concat-stream": "^2.0.0",
     "cors": "^2.8.5",
     "cross-fetch": "^3.0.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-promise-router": "^3.0.3",
     "fs-extra": "^9.0.1",
     "git-url-parse": "^11.4.4",
