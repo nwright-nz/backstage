@@ -37,7 +37,7 @@
     "json-schema": "^0.2.5",
     "json-schema-merge-allof": "^0.7.0",
     "typescript-json-schema": "^0.47.0",
-    "yaml": "^1.9.2",
+    "yaml": "^2.2.2",
     "yup": "^0.29.3"
   },
   "devDependencies": {
