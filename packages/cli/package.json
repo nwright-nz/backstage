@@ -61,7 +61,7 @@
     "dashify": "^2.0.0",
     "diff": "^4.0.2",
     "esbuild": "^0.8.16",
-    "eslint": "^7.1.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-formatter-friendly": "^7.0.0",
     "eslint-plugin-import": "^2.20.2",
