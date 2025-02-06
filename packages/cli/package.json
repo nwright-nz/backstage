@@ -46,7 +46,7 @@
     "@svgr/plugin-jsx": "5.4.x",
     "@svgr/plugin-svgo": "5.4.x",
     "@svgr/rollup": "5.5.x",
-    "@svgr/webpack": "5.4.x",
+    "@svgr/webpack": "6.1.0",
     "@types/start-server-webpack-plugin": "^2.2.0",
     "@types/webpack-env": "^1.15.2",
     "@types/webpack-node-externals": "^2.5.0",
