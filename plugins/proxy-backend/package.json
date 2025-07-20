@@ -34,7 +34,7 @@
     "express": "^4.17.1",
     "express-promise-router": "^3.0.3",
     "http-proxy-middleware": "^0.19.1",
-    "morgan": "^1.10.0",
+    "morgan": "^1.10.1",
     "uuid": "^8.0.0",
     "winston": "^3.2.1",
     "yaml": "^1.9.2",
