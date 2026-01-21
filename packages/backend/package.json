@@ -50,7 +50,7 @@
     "knex": "^0.21.6",
     "pg": "^8.3.0",
     "pg-connection-string": "^2.3.0",
-    "sqlite3": "^5.0.0",
+    "sqlite3": "^5.1.7",
     "winston": "^3.2.1"
   },
   "devDependencies": {
