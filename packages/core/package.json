@@ -48,7 +48,7 @@
     "dagre": "^0.8.5",
     "qs": "^6.9.4",
     "immer": "^8.0.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "material-table": "^1.69.1",
     "prop-types": "^15.7.2",
     "rc-progress": "^3.0.0",
