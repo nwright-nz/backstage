@@ -38,7 +38,7 @@
     "express": "^4.17.1",
     "express-promise-router": "^3.0.3",
     "kafkajs": "^1.16.0-beta.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "winston": "^3.2.1"
   },
   "devDependencies": {
